@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Pekanbaru Centric World on a Gingery Projection</title>
+<script src="./d3.min.js"></script>
+<script src="./queue.min.js"></script>
+<script src="./topojson.min.js"></script>
+<script src="./gingery.min.js"></script>
+<style>
+/*butuh style ini untuk ganti kolor SVG (bukan sex vromotional girl, ya) 
+original author: Davis https://www.jasondavies.com/maps/gingery/
+*/
+body {
+  width: auto;
+  font-family: sans-serif;
+  line-height: 1.3em;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: .5em;
+}
+
+h3 {
+  margin: .5em;
+}
+
+#header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+#header h1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  pointer-events: all;
+}
+
+#header .meta, #header h3 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  pointer-events: all;
+}
+
+.meta {
+  font-style: italic;
+  font-size: small;
+  color: #999;
+}
+
+.meta a {
+  text-decoration: none;
+  color: #666;
+}
+
+blockquote {
+  border-left: solid #eee 10px;
+  margin-left: 0;
+  padding-left: 2em;
+}
+
+#map {
+  text-align: center;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.background {
+  fill: #587e81;
+}
+
+.land {
+  fill: #dbbc51;
+  stroke: #000;
+  stroke-width: .5px;
+  stroke-linejoin: round;
+}
+
+.graticule {
+  fill: none;
+  stroke: #333;
+  stroke-width: .5px;
+}
+
+.circle {
+  fill: none;
+  stroke: #f00;
+  stroke-dasharray: 5,2;
+  stroke-width: .5px;
+}
+
+.route {
+  fill: none;
+  stroke: #f00;
+  stroke-opacity: .8;
+  stroke-width: 2.5px;
+}
+
+.airport {
+  fill: #f00;
+  fill-opacity: .8;
+}
+
+.parallel, .meridian {
+  fill: none;
+  stroke: #000;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.slider .handle {
+  fill: #f00;
+  stroke: #000;
+  stroke-width: .5px;
+  cursor: move;
+}
+
+</style>
+<div id="map">
+<script src="app.bea.js"></script>
